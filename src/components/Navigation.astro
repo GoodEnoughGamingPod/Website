@@ -1,50 +1,62 @@
 ---
 import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
 ---
-<header class="lg:flex p-5  gap-5">
-    <Astronav>
-      <div class="flex w-full justify-between">
-        <a class="logo"><img src="logo_trans.png" /></a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
-        </div>
-      </div>
-      <MenuItems class="hidden lg:flex">
+<header class="lg:flex justify-between p-5 gap-5 mx-auto container">
+  <Astronav closeOnClick>
+     <div class="flex w-full lg:w-auto justify-between">
+      <a href="https://flowbite.com/" class="flex items-center space-x-1 rtl:space-x-reverse">
+        <img src="logo.png" class="h-20" alt="Podcast Logo" />
+        <span class="self-center text-4xl font-semibold whitespace-nowrap"></span>
+    </a>
+     </div>
+     <MenuItems class="hidden lg:flex items-center">
         <ul class="flex flex-col lg:flex-row lg:gap-5">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">News & Reviews</a></li>
-          <li>
-            <Dropdown class="group">
-              <button class="flex items-center">
-                <span> Listen </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </button>
-              <DropdownItems class="relative">
-                <div class="absolute top-0">
-                  <ul>
-                    <li>Spotify</li>
-                    <li>Apple Music</li>
-                    <li>YouTube</li>
-                  </ul>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
+  
+           <li>
+              <Dropdown class="group">
+                 <button class="flex items-center">
+                    <span class="nav-menu-gradient text-2xl"> Listen</span>
+                    <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="3"
+                       stroke="currentColor"
+                       class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                       <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                 </button>
+                 <DropdownItems class="relative">
+                    <div
+                       class="lg:absolute bg-gray-900 top-2 w-40 border shadow rounded p-2">
+                       <ul>
+                          <li>
+                             <a href="#" class="nav-menu-gradient">Spotify</a>
+                          </li>
+                          <li>
+                             <a href="#" class="nav-menu-gradient">Apple Music</a>
+                          </li>   
+                          <li>
+                            <a href="#" class="nav-menu-gradient">Youtube</a>
+                         </li>                     
+                       </ul>
+                    </div>
+                 </DropdownItems>
+              </Dropdown>
+           <li>
+              <a href="#" class="nav-menu-gradient text-2xl">News & Reviews</a>
+           </li>
+           <li>
+              <a href="#" class="nav-menu-gradient text-2xl">Contact</a>
+           </li>
+           </li>
         </ul>
-      </MenuItems>
-    </Astronav>
-  </header>
+     </MenuItems>
+  </Astronav>
+</header>
 <style>
     h3 { 
         color: white; 
@@ -60,6 +72,12 @@ import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
        
         top: 50%;
+    }
+
+    .nav-menu-gradient {
+      background: -webkit-linear-gradient(#daa6d2, #890e6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
 </style>

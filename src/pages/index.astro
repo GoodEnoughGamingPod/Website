@@ -1,58 +1,136 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
+import Nav from '../components/Nav.astro';
+import MainContent from '../components/MainContent.astro';
+import Footer from '../components/Footer.astro';
+import SubscribeBar from '../components/SubscribeBar.astro';
 ---
 
-<Layout title="Good Enough Gaming">
-	<Navigation />
+<Layout title="Good Enough Gaming">	
+	<Nav />
+	<body>
+	<!-- div class="banner-container">		-->
+		<div class="banner-image">		
+		 	<div class="absolute bottom-0 left-0 right-0 top-0 h-lvh w-full bg-[url('GegBannerNoText.png')] bg-cover bg-[50%] banner" /> 			
+			<div class="title text-center absolute z-10 top-20 mt-48">
+				<h2 class="home-line">Home of the</h2>
+				<p> <span class="good-line m-0 p-0">Good Enough Gaming</span></p>
+				<h1 class="podcast-line m-0 p-0">Podcast</h1>
+			</div>
+			<div class="main-container grid lg:grid-cols-2 sm:grid-cols-1 gap-8 h-100">			
+				<div class="about-container border-solid left-content relative p-5">
+					<p class="about-text text-m">Just 4 dudes who love to talk about all things video games. New episodes every week.</p>
+					<img class="group-image absolute bottom-0 object-contain pb-5" src="groupPhoto.PNG" />
+				</div>
+				<div class="border-solid right-content">
+					<img src="GameconBanner.png" />
+				</div>
+			</div>
+		</div>	
 	
-	<section class="w-screen">
-		<img src="banner.png" class="object-cover w-full h-full" alt="Image alt text" />
-	</section>
-		
+		<div class="subscribe ">		
+			<div class="icon-container flex">		
+				<a href="https://www.youtube.com/@GoodEnoughGamingPod"><img src="youtube-square.svg" /></a>
+				<a href="https://podcasts.apple.com/ca/podcast/good-enough-gaming-pod/id1553128355"><img src="apple-podcasts-icon.svg" /></a>
+				<a href="https://open.spotify.com/show/3x1nEjDu2Y0ce19FGTXPyo"><img src="spotify-square-color-icon.svg" /></a>
+				<span class="rise-shake text-white">Subscribe!</span>
+			</div>
+		</div>		
+
 	<main>
-		<h1>Good Enough <span class="text-gradient">Gaming</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		
+		<p class="instructions text-center">
+			Latest Episodes
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-		<Header />
+		<div class="youtube-wrapper grid lg:grid-cols-3 sm:grid-cols-1">
+			<div class="youtube-vid align-middle">
+				<iframe class="youtube-iframe" src="https://www.youtube.com/embed?listType=playlist&list=UULFaKEZQ3_U67UWC9O2J0FsgQ"></iframe>
+			</div>
+			<div class="youtube-vid">
+				<iframe class="youtube-iframe" src="https://www.youtube.com/embed?listType=playlist&list=UULFaKEZQ3_U67UWC9O2J0FsgQ&index=2"></iframe>
+			</div>
+			<div class="youtube-vid">
+				<iframe class="youtube-iframe" src="https://www.youtube.com/embed?listType=playlist&list=UULFaKEZQ3_U67UWC9O2J0FsgQ&index=3"></iframe>
+			</div>
+		</div>
+
+		<p class="instructions text-center">
+			Latest News
+		</p>
+		<div class="news-wrapper grid lg:grid-cols-3 sm:grid-cols-1">
+			<div class="news-card align-middle">
+				
+			</div>
+			<div class="news-card">
+				
+			</div>
+			<div class="news-card">
+				
+			</div>
+		</div>
+		
 	</main>
+
+	<Footer />
+	</body>
 </Layout>
 
 <style>
+	body {
+		position: relative;
+		min-height: 100%;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
+		max-width: 90rem;		
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		margin-top: 100vh;
+	}
+	.banner-container {
+		position: relative;
+		height: 100vh;
+		width: 100vw;
+	}
+	.banner-image {
+		display: grid;
+  		grid-template: 1fr / 1fr;
+  		place-items: center;
+	}
+	.main-container {
+        margin: auto;
+		padding: 1rem;
+		max-width: 90rem;		
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+        position: absolute;
+        z-index:10;
+		//bottom: 55px;	
+    }
+    .main-card {       
+        width: auto;
+		height: auto;
+        background: white;
+        color: blue;
+		margin: 2rem;
+		
+    }
+	.group-image {
+		width: calc(100% - 2.5rem); 
+	}
+	.left-content {
+
+	}
+	.title {
+		p {
+			font-size: 60px;
+		}
+		  //text-shadow: 0 0 10px #cd66dd, 0 0 20px #4883cf, 0 0 42px rgb(206, 63, 213), 0 0 82px rgb(54, 161, 199),0 0 92px rgb(53, 97, 210);
+		  color: rgb(48, 193, 246);
 	}
 	.astro-a {
 		position: absolute;
@@ -68,21 +146,58 @@ import Header from '../components/Header.astro';
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
-		margin-bottom: 1em;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+	}
+	.home-line {
+		color: #3447d9; 
+		text-shadow:
+		0 0 7px #fff,
+		0 0 10px #fff,
+		0 0 21px #fff,
+		0 0 42px #fff,
+		0 0 82px #fff,
+		0 0 92px #fff,
+		0 0 102px #fff,
+		0 0 151px #fff;
+		
+	}
+	.good-line {		
+		color: #4ddbff;
+  		text-shadow:
+		0 0 7px #df53f5,
+		0 0 10px #4ddbff,
+		0 0 21px #4ddbff,
+		0 0 42px #df53f5,
+		0 0 82px #4ddbff,
+		0 0 92px #df53f5,
+		0 0 102px #4ddbff,
+		0 0 151px #df53f5;
+		
+	}
+	.podcast-line {
+		color: #9425cf;
+		text-shadow:
+		0 0 7px #fff,
+		0 0 10px #fff,
+		0 0 21px #fff,
+		0 0 42px #fff,
+		0 0 82px #fff,
+		0 0 92px #fff,
+		0 0 102px #fff,
+		0 0 151px #fff;
 	}
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
 		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
+		padding: 0.5rem;
 		border-radius: 8px;
+		margin-top: 3rem;
 	}
 	.instructions code {
 		font-size: 0.8em;
@@ -101,4 +216,212 @@ import Header from '../components/Header.astro';
 		gap: 2rem;
 		padding: 0;
 	}
+
+	.subscribe {
+		//transform: translateY(40px);
+		background-color: black;
+        
+        width: 88rem;
+        height: 10%;
+        margin-top: 100vh;
+        z-index: 20;
+        position: absolute; 
+		
+		
+	}
+
+	.icon-container {  
+        justify-content: center;
+        gap: 2rem;
+    }
+
+	.youtube-wrapper {
+		max-width: 90rem;
+	}
+	.youtube-vid {
+		
+		//max-width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1rem;
+		border-radius: 5px;
+	}
+
+	.youtube-iframe {
+		aspect-ratio: 16 / 9;
+		width: 440px;
+		
+	}
+
+	.news-card {
+		aspect-ratio: 16 / 9;
+		width: 440px;
+	}
+    
+
+	span.rise-shake {
+		animation: jump-shaking 0.83s infinite;
+	}
+
+	@keyframes jump-shaking {
+		0% { transform: translateX(0) }
+		25% { transform: translateY(-3px) }
+		35% { transform: translateY(-3px) rotate(2deg) }
+		55% { transform: translateY(-3px) rotate(-2deg) }
+		65% { transform: translateY(-3px) rotate(2deg) }
+		75% { transform: translateY(-3px) rotate(-2deg) }
+		100% { transform: translateY(0) rotate(0) }
+	}
+
+	/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+	.main-container {
+       margin-top: 75rem;
+		//bottom: 10%;	
+    }
+	.title {
+		margin-top: 6rem;
+		p {
+			font-size: 30px;
+		}
+		h1 {
+			font-size: 30px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+	}
+	.about-text {
+		font-size: 14px;
+		text-align: center;
+		
+	}
+
+	.about-container {
+		height: 25vh;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	.banner {
+		background-position: 50%;
+		
+	}
+	.subscribe {
+		transform: translateY(-3.5vh);
+		background-color: black;
+        border-radius: 10px;
+        width: 100vw;
+        height: 4rem;
+        margin-top: 100vh;
+        z-index: 20;
+	}
+
+	.subscribe span {
+		font-size: 1rem;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.icon-container { 
+		display: flex;
+		height: 4rem;
+        justify-content: center;
+		align-items: center;
+        gap: 2rem;
+		margin: auto;
+		position: absolute;
+  		top: 0; left: 0; bottom: 0; right: 0;
+    }
+    
+	.icon-container img {
+		width: 50px;
+		padding: 5px;
+	}
+	.youtube-icon img{
+		width: 50px;
+		height: auto;
+	}
+	.youtube-iframe {
+		aspect-ratio: 16 / 9;
+		width: 360px;
+		
+	}
+	.news-card {
+		aspect-ratio: 16 / 9;
+		width: 360px;
+	}
+}
+@media only screen and (min-width: 64rem) {
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 0.5rem;
+		border-radius: 8px;
+		margin-top: 8rem;
+	}
+	.main-container {
+		//bottom: 15%;
+		margin-top: 100rem;
+	}
+	.about-text {
+		font-size: 1rem;
+		text-align: center;
+		
+	}
+	.about-container {
+		
+		aspect-ratio: 16 / 9;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	.subscribe {
+		transform: translateY(-7vh);
+		background-color: black;
+        
+        width: 100vw;
+        height: 8rem;
+        margin-top: 100vh;
+        z-index: 20;
+        //position: absolute; 
+		
+        margin-left: auto;
+		margin-right: auto;
+	}
+
+	.subscribe span {
+		font-size: 3rem;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	.subscribe a {
+		width: 5.5rem;
+	}
+
+	.icon-container {  
+		display: flex;
+        justify-content: center;
+		align-items: center;
+        gap: 4rem;
+		margin: auto;
+  		position: absolute;
+  		top: 0; left: 0; bottom: 0; right: 0;
+    }
+	.icon-container img {
+		width: 10rem;
+		//padding: 10px;
+	}  
+    
+    .icon {
+        width: 5rem;
+        height: 5rem;
+        justify-content: center;
+        align-self: center;     
+		margin-top: auto;
+		margin-bottom: auto;
+    }
+
+}
+	
 </style>
+
+<script src="https://kit.fontawesome.com/1c9cfe66fa.js" crossorigin="anonymous"></script>
