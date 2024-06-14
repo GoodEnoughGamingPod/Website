@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://goodenoughgaming.github.io',
-  base: './',
+  site: 'https://goodenoughgaming.com',
+  base: '/',
   integrations: [tailwind()]
 });

@@ -7,43 +7,40 @@ import Footer from '../components/Footer.astro';
 <Layout title="Good Enough Gaming">	
     <Nav />
 	 <body>
+		<div class="div-banner bg-[url('../GegBannerNoText.png')]">
 		<div class="banner-image">		
 			
-			<ul>
+			<!-- <ul>
 				<li><a href="/posts/post-1/">Post 1</a></li>
-			  </ul>
-			<!-- <div class="title text-center absolute z-10 top-20 mt-48">
-				<h2 class="home-line">Home of the</h2>
-				<p> <span class="good-line m-0 p-0">Good Enough Gaming</span></p>
-				<h1 class="podcast-line m-0 p-0">Podcast</h1>
-			</div>
-			<div class="main-container grid lg:grid-cols-2 sm:grid-cols-1 gap-8 h-100">			
-				<div class="about-container border-solid left-content relative p-5">
-					<p class="about-text text-m">Just 4 dudes who love to talk about all things video games. New episodes every week.</p>
-					<img class="group-image absolute bottom-0 object-contain pb-5" src="/public/groupPhoto.PNG" />
-				</div>
-				<div class="border-solid right-content">
-					<img src="/public/GameconBanner.png" />
-				</div>
-			</div>
-		</div>	-->
-    	<h1>NEWS</h1>
-		
+			  </ul>-->
+			
+		</div>
 	</body>
 </Layout>
 <Footer />
 
 <style>
 	body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        justify-content: space-between;
-		background-image: url('/public/GegBannerNoText.png');
+        //display: flex;
+        //min-height: 100vh;
+        //flex-direction: column;
+        //justify-content: space-between;
+		//background-image: url('GegBannerNoText.png');
+        //background-position: center; /* Center the image */
+        //background-repeat: no-repeat; /* Do not repeat the image */
+        //background-size: cover; /* Resize the background image to cover the entire container */
+        //align-items: center;
+	}
+
+	.div-banner {
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-	}
+    }
 	
 </style>

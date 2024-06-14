@@ -12,7 +12,7 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 	<body>
 	<!-- div class="banner-container">		-->
 		<div class="banner-image">		
-		 	<div class="absolute bottom-0 left-0 right-0 top-0 h-lvh w-full bg-[url('GegBannerNoText.png')] bg-cover bg-[50%] banner" /> 			
+		 	<div class="absolute bottom-0 left-0 right-0 top-0 h-lvh w-full bg-[url('../GegBannerNoText.png')] bg-cover bg-[50%] banner" /> 			
 			<div class="title text-center absolute z-10 top-20 mt-48">
 				<h2 class="home-line">Home of the</h2>
 				<p> <span class="good-line m-0 p-0">Good Enough Gaming</span></p>
@@ -281,16 +281,17 @@ import SubscribeBar from '../components/SubscribeBar.astro';
     }
 	.title {
 		margin-top: 6rem;
-		p {
-			font-size: 30px;
-		}
-		h1 {
-			font-size: 30px;
-		}
-		h2 {
-			font-size: 20px;
-		}
 	}
+	.title p {
+		font-size: 30px;
+	}
+	.title h1 {
+		font-size: 30px;
+	}
+	.title h2 {
+		font-size: 20px;
+	}
+	
 	.about-text {
 		font-size: 14px;
 		text-align: center;

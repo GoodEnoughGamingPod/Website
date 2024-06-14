@@ -3,14 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
+import ps5 from '/public/ps5.png';
+//import banner from '/public/GegBannerNoText.png';
+let banner = '/public/GegBannerNoText.png'
+
 ---
 <Layout title="Good Enough Gaming">	
     <Nav />
-        <body>
+    <div class="div-banner bg-[url('../GegBannerNoText.png')]">
+        <body >
             <div class="container z-10">
                 <div class="picture-container">
                     <div class="picture">
-                        <img src="/public/ps5.png">
+                        <img src={ps5.src}>
                     </div>
                 </div>
                 <div class="contact-form-container">
@@ -27,13 +32,24 @@ import Footer from '../components/Footer.astro';
             </div>
             <Footer />
         </body>
-  
+    </div>
 </Layout>
 
 
-<style>
+<style define:vars={{ banner }}>
     body {
-        background-image: url('/public/GegBannerNoText.png');
+        //background-image: var(--banner);
+        //background-position: center; /* Center the image */
+        //background-repeat: no-repeat; /* Do not repeat the image */
+        //background-size: cover; /* Resize the background image to cover the entire container */
+        //height: 100vh;
+        //display: flex;
+        //flex-direction: column;
+        //justify-content: center;
+        //align-items: center;
+    }
+
+    .div-banner {
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */

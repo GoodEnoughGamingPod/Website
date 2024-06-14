@@ -1,5 +1,9 @@
 ---
 import Blog from '../pages/blog.astro';
+
+import arrow from '/public/arrow-drop-down.svg';
+import logo from '/public/logo_trans.png';
+
           
 ---
 
@@ -8,7 +12,7 @@ import Blog from '../pages/blog.astro';
         <!--Nav Logo-->
         <!--Logo is turned white in the css with a filter on dark mode-->
         <a href="/" class="cs-logo" aria-label="back to home">
-            <img src="/public/logo_trans.png" alt="logo" width="300" height="300" aria-hidden="true" decoding="async">
+            <img src={logo.src} alt="logo" width="300" height="300" aria-hidden="true" decoding="async">
         </a>
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
@@ -37,7 +41,7 @@ import Blog from '../pages/blog.astro';
                     <li class="cs-li cs-dropdown" tabindex="0">
                         <span class="cs-li-link">
                             Listen
-                            <img class="cs-drop-icon" src="/public/arrow-drop-down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            <img class="cs-drop-icon" src={arrow.src} alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                         </span>
                         <ul class="cs-drop-ul">
                             <li class="cs-drop-li">
