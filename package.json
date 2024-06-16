@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -13,7 +13,8 @@
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.1.1",
     "astro-navbar": "^2.3.0",
-    "axios": "^1.7.2"
+    "axios": "^1.7.2",
+    "ngrok": "^5.0.0-beta.2"
   },
   "description": "```sh npm create astro@latest -- --template basics ```",
   "main": "index.js",

@@ -10,34 +10,38 @@ let banner = '/public/GegBannerNoText.png'
 ---
 <Layout title="Good Enough Gaming">	
     <Nav />
-    <div class="div-banner bg-[url('../GegBannerNoText.png')]">
+    
         <body >
-            <div class="container z-10">
-                <div class="picture-container">
-                    <div class="picture">
-                        <img src={ps5.src}>
+            <div class="div-banner bg-[url('../GegBannerNoText.png')]">
+                <div class="container z-10">
+                    <div class="picture-container">
+                        <div class="picture">
+                            <img src={ps5.src}>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-form-container">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                        <span class="form-header">Contact us</span>
-                        <input type="hidden" name="access_key" value="dc0b549-ebd3-469b-bdf3-fc816e6d3915">
-                        <input type="text" name="name" class="input" placeholder="Your Name" />
-                        <input type="email" name="email" class="input" placeholder="Your Email" />
-                        <textarea name=" message" cols="30" rows="5" placeholder="Enter Your message" class="input"
-                            required></textarea>
-                        <button class="submit" type="submit">Submit</button>
-                    </form>
-                </div>
+                    <div class="contact-form-container">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                            <span class="form-header">Contact us</span>
+                            <input type="hidden" name="access_key" value="dc0b549-ebd3-469b-bdf3-fc816e6d3915">
+                            <input type="text" name="name" class="input" placeholder="Your Name" />
+                            <input type="email" name="email" class="input" placeholder="Your Email" />
+                            <textarea name=" message" cols="30" rows="5" placeholder="Enter Your message" class="input"
+                                required></textarea>
+                            <button class="submit" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>          
             </div>
             <Footer />
         </body>
-    </div>
 </Layout>
 
 
 <style define:vars={{ banner }}>
     body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         //background-image: var(--banner);
         //background-position: center; /* Center the image */
         //background-repeat: no-repeat; /* Do not repeat the image */
@@ -152,7 +156,7 @@ let banner = '/public/GegBannerNoText.png'
         .container {
             width: 60rem;
             height: 40rem;
-            margin-bottom: 10%;
+            margin-top: 10%;
         }
        
         .message-field textarea{

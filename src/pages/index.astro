@@ -9,37 +9,38 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 
 <Layout title="Good Enough Gaming">	
 	<Nav />
-	<body>
-	<!-- div class="banner-container">		-->
-		<div class="banner-image">		
-		 	<div class="absolute bottom-0 left-0 right-0 top-0 h-lvh w-full bg-[url('../GegBannerNoText.png')] bg-cover bg-[50%] banner" /> 			
-			<div class="title text-center absolute z-10 top-20 mt-48">
+	<body >
+		<div class="banner-section">		
+		 	<div class="absolute bottom-0 left-0 right-0 top-0 h-lvh w-full bg-[url('../GegBannerNoText.png')] bg-cover bg-[50%] banner" /> 
+				<img class="title" src="../goodenoughtitle.png" />
+				<span class="podcast-line text-center">PODCAST</span>	
+			<!--<div class="title text-center z-10">
 				<h2 class="home-line">Home of the</h2>
-				<p> <span class="good-line m-0 p-0">Good Enough Gaming</span></p>
-				<h1 class="podcast-line m-0 p-0">Podcast</h1>
-			</div>
-			<div class="main-container grid lg:grid-cols-2 sm:grid-cols-1 gap-8 h-100">			
-				<div class="about-container border-solid left-content relative p-5">
-					<p class="about-text text-m">Just 4 dudes who love to talk about all things video games. New episodes every week.</p>
-					<img class="group-image absolute bottom-0 object-contain pb-5" src="groupPhoto.PNG" />
+				<h1> <span class="good-line m-0 p-0">Good Enough Gaming</span></p>
+				<h1 class="podcast-line m-0 p-0">Podcast</h1>			
+			</div>-->
+			<div class="banner-container">			
+				<div class="banner-content-left border-solid relative grid grid-rows-2">
+					<p class="about-text row-span-1">Just 4 dudes who love to talk about all things video games. New episodes every week.</p>
+					<img class="group-image absolute bottom-0 object-contain p-5 row-span-2" src="groupPhoto.PNG" />
 				</div>
-				<div class="border-solid right-content">
+				<div class="banner-content-right border-solid right-content">
 					<img src="GameconBanner.png" />
+				</div>
+			</div>
+			<div class="subscribe ">		
+				<div class="icon-container flex">		
+					<a href="https://www.youtube.com/@GoodEnoughGamingPod"><img src="youtube-square.svg" /></a>
+					<a href="https://podcasts.apple.com/ca/podcast/good-enough-gaming-pod/id1553128355"><img src="apple-podcasts-icon.svg" /></a>
+					<a href="https://open.spotify.com/show/3x1nEjDu2Y0ce19FGTXPyo"><img src="spotify-square-color-icon.svg" /></a>
+					<span class="rise-shake text-white">Subscribe!</span>
 				</div>
 			</div>
 		</div>	
 	
-		<div class="subscribe ">		
-			<div class="icon-container flex">		
-				<a href="https://www.youtube.com/@GoodEnoughGamingPod"><img src="youtube-square.svg" /></a>
-				<a href="https://podcasts.apple.com/ca/podcast/good-enough-gaming-pod/id1553128355"><img src="apple-podcasts-icon.svg" /></a>
-				<a href="https://open.spotify.com/show/3x1nEjDu2Y0ce19FGTXPyo"><img src="spotify-square-color-icon.svg" /></a>
-				<span class="rise-shake text-white">Subscribe!</span>
-			</div>
-		</div>		
+				
 
-	<main>
-		
+	<main>		
 		<p class="instructions text-center">
 			Latest Episodes
 		</p>
@@ -69,7 +70,6 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 				
 			</div>
 		</div>
-		
 	</main>
 
 	<Footer />
@@ -80,6 +80,8 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 	body {
 		position: relative;
 		min-height: 100%;
+		width: 100vw;
+		background-attachment: fixed;
 	}
 	main {
 		margin: auto;
@@ -88,26 +90,28 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-		margin-top: 100vh;
+		margin-top: 8rem;;
+	}
+	
+	.banner-section {
+		position: relative;
+		//display: grid;
+		height: 100vh;
+  		//grid-template: 1fr / 1fr;
+  		//place-items: center;
 	}
 	.banner-container {
-		position: relative;
-		height: 100vh;
-		width: 100vw;
-	}
-	.banner-image {
-		display: grid;
-  		grid-template: 1fr / 1fr;
-  		place-items: center;
-	}
-	.main-container {
-        margin: auto;
-		padding: 1rem;
+		display: flex;
+  		flex-direction: row;
+		justify-content: space-between;
+		gap: 2rem;
+        //margin: auto;
+		//padding: 1rem;
 		max-width: 90rem;		
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-        position: absolute;
+        //position: absolute;
         z-index:10;
 		//bottom: 55px;	
     }
@@ -121,16 +125,32 @@ import SubscribeBar from '../components/SubscribeBar.astro';
     }
 	.group-image {
 		width: calc(100% - 2.5rem); 
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
 	}
-	.left-content {
-
-	}
+	
 	.title {
-		p {
-			font-size: 60px;
-		}
-		  //text-shadow: 0 0 10px #cd66dd, 0 0 20px #4883cf, 0 0 42px rgb(206, 63, 213), 0 0 82px rgb(54, 161, 199),0 0 92px rgb(53, 97, 210);
-		  color: rgb(48, 193, 246);
+		//text-shadow: 0 0 10px #cd66dd, 0 0 20px #4883cf, 0 0 42px rgb(206, 63, 213), 0 0 82px rgb(54, 161, 199),0 0 92px rgb(53, 97, 210);
+		//margin-top: 10rem;
+		color: rgb(48, 193, 246);
+		position: relative;
+	}
+	.title p {
+		font-size: 3rem;
+	}	
+	.title h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+	}
+	.title h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
 	}
 	.astro-a {
 		position: absolute;
@@ -140,18 +160,6 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-	}
-	h2 {
-		font-size: 2rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
 	}
 	.home-line {
 		color: #3447d9; 
@@ -190,6 +198,9 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 		0 0 92px #fff,
 		0 0 102px #fff,
 		0 0 151px #fff;
+		position: absolute;
+		left: 0;
+		right: 0;
 	}
 	.instructions {
 		margin-bottom: 2rem;
@@ -220,14 +231,12 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 	.subscribe {
 		//transform: translateY(40px);
 		background-color: black;
-        
+       
         width: 88rem;
         height: 10%;
-        margin-top: 100vh;
+        
         z-index: 20;
         position: absolute; 
-		
-		
 	}
 
 	.icon-container {  
@@ -275,15 +284,30 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 
 	/* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
-	.main-container {
-       margin-top: 75rem;
+	main {
+		margin-top: 3rem;
+	}
+	
+	.banner-container {
+       padding-top: 15vh;
+	   flex-direction: column;
+	   left: 0;
+	   right: 0;
+	   justify-content: center;
+	   align-items: center;
 		//bottom: 10%;	
     }
 	.title {
-		margin-top: 6rem;
+		width: 90%;
+		padding-top: 20vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.podcast-line {
+		font-size: 1.75rem;;
 	}
 	.title p {
-		font-size: 30px;
+		font-size: 0.75rem;
 	}
 	.title h1 {
 		font-size: 30px;
@@ -293,14 +317,26 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 	}
 	
 	.about-text {
-		font-size: 14px;
-		text-align: center;
-		
+		font-size: 1rem;;
+		text-align: center;	
+		padding-top: 0.5rem;
 	}
 
-	.about-container {
-		height: 25vh;
+	.banner-content-left {
+		aspect-ratio: 16 / 9;
+		width: 90vw;
+		height: auto;
 		background-color: rgba(0, 0, 0, 0.7);
+		flex: 100%;
+		position: relative;
+	}
+	.banner-content-right {
+		margin-top: 2rem;
+		aspect-ratio: 16 / 9;
+		width: 90vw;
+		height: auto;
+		position: relative;
+		flex: 100%;
 	}
 
 	.banner {
@@ -308,12 +344,14 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 		
 	}
 	.subscribe {
-		transform: translateY(-3.5vh);
+		transform: translateY(4rem);
+		position: absolute;
 		background-color: black;
         border-radius: 10px;
         width: 100vw;
         height: 4rem;
-        margin-top: 100vh;
+		bottom: 0;
+        //margin-top: 100vh;
         z-index: 20;
 	}
 
@@ -353,6 +391,16 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 	}
 }
 @media only screen and (min-width: 64rem) {
+	.title {
+		width: 60%;
+		padding-top: 20vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.podcast-line {
+		font-size: 3rem;;
+	}
+	
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
@@ -361,27 +409,42 @@ import SubscribeBar from '../components/SubscribeBar.astro';
 		border-radius: 8px;
 		margin-top: 8rem;
 	}
-	.main-container {
-		//bottom: 15%;
-		margin-top: 100rem;
+	.banner-container {		
+		display: flex;
+		padding-top: 10rem;
+		//padding-bottom: 5rem;
+		justify-content: center;
+		margin-right: auto;
+		margin-left: auto;
+		
 	}
 	.about-text {
-		font-size: 1rem;
+		font-size: 1.5rem;
 		text-align: center;
-		
+		padding-top: 1rem;
 	}
-	.about-container {
-		
+	.banner-content-left {
 		aspect-ratio: 16 / 9;
+		
 		background-color: rgba(0, 0, 0, 0.7);
+		flex: 50%;
+	}
+	.banner-content-right {
+		aspect-ratio: 16 / 9;
+		height: auto;
+		position: relative;
+		flex: 50%;
+	}
+	.banner-content-right img {
+		width: 100%;
 	}
 	.subscribe {
-		transform: translateY(-7vh);
+		transform: translateY(7vh);
 		background-color: black;
         
         width: 100vw;
         height: 8rem;
-        margin-top: 100vh;
+        //margin-top: 100vh;
         z-index: 20;
         //position: absolute; 
 		
